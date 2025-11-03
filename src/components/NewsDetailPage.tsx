@@ -19,11 +19,11 @@ export function NewsDetailPage({ onNavigate }: NewsDetailPageProps) {
 
         <article>
           <div className="mb-6">
-            <span className="inline-block bg-green-400 text-black px-3 py-1 rounded-full text-sm mb-4">
+            {/* <span className="inline-block bg-green-400 text-black px-3 py-1 rounded-full text-sm mb-4">
               ข่าว K-pop
-            </span>
-            <h1 className="mb-4">I'm so (So, Hot 6! Even!) - Aespa Comeback</h1>
+            </span> */}
             <p className="text-gray-600">เผยแพร่เมื่อ 1 พฤศจิกายน 2568</p>
+            <h1 className="mb-4">I'm so (So, Hot 6! Even!) - Aespa Comeback</h1>
           </div>
 
           <ImageWithFallback
