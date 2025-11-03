@@ -5,8 +5,6 @@ import { NewsCard } from './NewsCard';
 import { ConcertCard } from './ConcertCard';
 import { FancafeCard } from './FancafeCard';
 
-import { XPostEmbed } from "./components/XPostEmbed";
-
 interface HomePageProps {
   onNavigate: (page: string, id?: number) => void;
 }
@@ -468,13 +466,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <SectionHeader title="Topic X" icon={true} />
-          
-        
+       <section className="py-8 bg-white">
+      <div className="container mx-auto px-4">
+        <SectionHeader title="Topic X" icon={true} />
+        <div className="mt-4">
+          {/* ตัวอย่างการฝังโพสต์ X */}
+          {/* <XPostEmbed postUrl="https://x.com/example/status/1234567890" /> */}
         </div>
-      </section>
+      </div>
+         
+    </section>
 
 
     </main>
