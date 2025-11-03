@@ -4,6 +4,11 @@
   import path from 'path';
 
   export default defineConfig({
+
+    // *** แก้ไขตรงนี้ให้เป็นชื่อ Repository ของคุณ ***
+  base: '/tpp_demov1_2/', 
+  // ***********************************************
+
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
