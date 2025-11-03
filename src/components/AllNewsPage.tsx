@@ -14,7 +14,7 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
       id: 1,
       imageUrl: 'https://images.unsplash.com/photo-1566477712363-3c75dd39b416?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrcG9wJTIwY29uY2VydCUyMHN0YWdlfGVufDF8fHx8MTc2MTk4Nzk1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
       category: 'K-pop' as const,
-      tag: 'ข่าวด่วน',
+      tag: 'ข่าว PR',
       title: "I'm so (So, Hot 6! Even!)",
       date: '1 พ.ย. 2025',
     },
