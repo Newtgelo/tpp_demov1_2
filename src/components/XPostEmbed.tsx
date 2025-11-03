@@ -1,0 +1,1 @@
+// This component is used to embed a post from an external source
