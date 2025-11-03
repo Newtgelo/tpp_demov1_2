@@ -86,6 +86,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       id: 1,
       imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400',
+      category: 'คอนเสิร์ต' as const,
       title: 'LE SSERAFIM - UNFORGIVEN',
       priceRange: 'ค. 31 ธ.ค. - 01 ม.ค.',
       venue: 'LOS LIVE, EUGENESIA',
