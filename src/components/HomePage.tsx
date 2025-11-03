@@ -5,6 +5,11 @@ import { NewsCard } from './NewsCard';
 import { ConcertCard } from './ConcertCard';
 import { FancafeCard } from './FancafeCard';
 
+import { XPostEmbed } from './XPostEmbed';
+import { Tweet } from 'react-tweet';
+
+
+
 interface HomePageProps {
   onNavigate: (page: string, id?: number) => void;
 }
@@ -421,6 +426,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   : 'bg-white border border-gray-300 hover:bg-gray-50'
               }`}
             >
+
+            เวิร์คช็อป
+            </button>
+            <button 
+              onClick={() => setEventFilter('เวิร์คช็อป')}
+              className={`px-4 py-2 rounded-full text-sm transition-colors ${
+                eventFilter === 'เวิร์คช็อป' 
+                  ? 'bg-orange-500 text-white' 
+                  : 'bg-white border border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+
+
+
               ป๊อปอัพสโตร์
             </button>
             <button 
@@ -466,16 +485,35 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-       <section className="py-8 bg-white">
-      <div className="container mx-auto px-4">
-        <SectionHeader title="Topic X" icon={true} />
-        <div className="mt-4">
-          {/* ตัวอย่างการฝังโพสต์ X */}
-          {/* <XPostEmbed postUrl="https://x.com/example/status/1234567890" /> */}
+
+ //      {/* Topic X Section */}
+
+  <section id="topic-x" className="py-12">
+  <div className="container mx-auto px-4">
+    <SectionHeader title="Topic X" icon={true} />
+
+    {/* Tweet Grid (clean look) */}
+    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      {[
+        "1985215537992077565",
+        "1778741935157362976",
+        "1778801743974128257",
+        "1778912724811669593",
+        "1779105427141036081",
+      ].map((id) => (
+        <div
+          key={id}
+          className="flex justify-center transform scale-[0.8] md:scale-[0.85] origin-top overflow-hidden max-h-[340px]"
+        >
+          <div className="overflow-hidden rounded-xl">
+            <Tweet id={id} />
+          </div>
         </div>
-      </div>
-         
-    </section>
+      ))}
+    </div>
+
+  </div>
+</section>
 
 
     </main>

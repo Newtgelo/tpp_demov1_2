@@ -18,6 +18,7 @@ export function ConcertCard({ imageUrl, category, title, priceRange, venue, loca
       case 'แฟนไซน์': return 'bg-pink-400';
       case 'ร้านอาหาร': return 'bg-orange-400';
       case 'แฟนคาเฟ่': return 'bg-blue-400';
+      case 'เวิร์คช็อป': return 'bg-yellow-400';
       case 'ป๊อปอัพสโตร์': return 'bg-green-400';
       case 'งานอีเว้นท์': return 'bg-indigo-400';
       case 'งานแฟนมีตติ้ง': return 'bg-teal-400';
