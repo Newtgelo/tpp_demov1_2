@@ -25,10 +25,11 @@ export function NewsCard({
 
   return (
     <div className="relative rounded-lg overflow-hidden group cursor-pointer hover:scale-105 shadow-md transition-transform duration-300 ease-in-out">
+      
       <ImageWithFallback
         src={imageUrl}
         alt={title}
-        className="w-full object-cover aspect-square" // สี่เหลี่ยมจัตุรัส - h-full ออก
+        className="w-full h-full object-cover aspect-square" // สี่เหลี่ยมจัตุรัส - h-full ออก
       />
       
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

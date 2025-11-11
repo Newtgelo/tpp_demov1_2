@@ -321,7 +321,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </button>
           </div>
 
-          {/* News Grid */}
+         {/* News Grid */}
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {filteredNews.map((news) => (
       <div key={news.id} onClick={() => onNavigate('news-detail', news.id)}>
