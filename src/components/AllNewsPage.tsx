@@ -187,7 +187,12 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
           <div className="mt-8 flex justify-center md:hidden">
             <button
               onClick={() => setShowAll(true)}
-              className="px-8 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors font-medium shadow-md"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-full 
+                          bg-white text-orange-500 border border-orange-500 
+                          font-semibold shadow-md 
+                          transition-colors duration-200 
+                          hover:bg-orange-500 hover:text-white
+                          "
             >
               ดูเพิ่มเติม
             </button>
