@@ -8,6 +8,7 @@ interface AllNewsPageProps {
 
 export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
   const [newsFilter, setNewsFilter] = useState<'ทั้งหมด' | 'K-pop' | 'T-pop'>('ทั้งหมด');
+  const [showAll, setShowAll] = useState(false); // เพิ่ม state สำหรับจัดการการแสดงข่าว
 
   const newsData = [
     {
@@ -112,6 +113,10 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
     ? newsData 
     : newsData.filter(news => news.category === newsFilter);
 
+  // จำนวนข่าวที่จะแสดงในมือถือ (2 คอลัมน์ x 3 แถว = 6 ข่าว)
+  const displayedNews = showAll ? filteredNews : filteredNews.slice(0, 6);
+  const hasMoreNews = filteredNews.length > 6;
+
   return (
     <main className="py-8">
       <div className="container mx-auto px-4">
@@ -128,7 +133,10 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
         {/* Category Filters */}
         <div className="flex gap-2 mb-6">
           <button 
-            onClick={() => setNewsFilter('ทั้งหมด')}
+            onClick={() => {
+              setNewsFilter('ทั้งหมด');
+              setShowAll(false); // Reset เมื่อเปลี่ยน filter
+            }}
             className={`px-4 py-2 rounded-full text-sm transition-colors ${
               newsFilter === 'ทั้งหมด' 
                 ? 'bg-orange-500 text-white' 
@@ -138,7 +146,10 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
             ข่าวทั้งหมด
           </button>
           <button 
-            onClick={() => setNewsFilter('K-pop')}
+            onClick={() => {
+              setNewsFilter('K-pop');
+              setShowAll(false); // Reset เมื่อเปลี่ยน filter
+            }}
             className={`px-4 py-2 rounded-full text-sm transition-colors ${
               newsFilter === 'K-pop' 
                 ? 'bg-orange-500 text-white' 
@@ -148,7 +159,10 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
             K-pop
           </button>
           <button 
-            onClick={() => setNewsFilter('T-pop')}
+            onClick={() => {
+              setNewsFilter('T-pop');
+              setShowAll(false); // Reset เมื่อเปลี่ยน filter
+            }}
             className={`px-4 py-2 rounded-full text-sm transition-colors ${
               newsFilter === 'T-pop' 
                 ? 'bg-orange-500 text-white' 
@@ -159,14 +173,41 @@ export function AllNewsPage({ onNavigate }: AllNewsPageProps) {
           </button>
         </div>
 
-        {/* News Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {filteredNews.map((news) => (
+        {/* News Grid - Responsive: 2 columns on mobile, 4 on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {displayedNews.map((news) => (
             <div key={news.id} onClick={() => onNavigate('news-detail', news.id)}>
               <NewsCard {...news} />
             </div>
           ))}
         </div>
+
+        {/* Load More Button - แสดงเฉพาะมือถือและเมื่อมีข่าวเหลือ */}
+        {!showAll && hasMoreNews && (
+          <div className="mt-8 flex justify-center md:hidden">
+            <button
+              onClick={() => setShowAll(true)}
+              className="px-8 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors font-medium shadow-md"
+            >
+              ดูเพิ่มเติม
+            </button>
+          </div>
+        )}
+
+        {/* Show Less Button - แสดงเมื่อกดดูเพิ่มเติมแล้ว */}
+        {showAll && (
+          <div className="mt-8 flex justify-center md:hidden">
+            <button
+              onClick={() => {
+                setShowAll(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="px-8 py-3 bg-gray-500 text-white rounded-full hover:bg-gray-600 transition-colors font-medium shadow-md"
+            >
+              แสดงน้อยลง
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );
