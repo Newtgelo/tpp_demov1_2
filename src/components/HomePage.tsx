@@ -5,6 +5,7 @@ import { NewsCard } from './NewsCard';
 import { ConcertCard } from './ConcertCard';
 import { FancafeCard } from './FancafeCard';
 
+
 interface HomePageProps {
   onNavigate: (page: string, id?: number) => void;
 }
