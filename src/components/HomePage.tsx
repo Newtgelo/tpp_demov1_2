@@ -18,7 +18,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const newsData = [
     {
       id: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1566477712363-3c75dd39b416?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrcG9wJTIwY29uY2VydCUyMHN0YWdlfGVufDF8fHx8MTc2MTk4Nzk1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: 'https://pbs.twimg.com/media/FwlITrUaIAArzjO?format=jpg&name=medium',
       category: 'K-pop' as const,
       tag: 'ข่าว PR',
       title: "I'm so (So, Hot 6! Even!)",
@@ -85,7 +85,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const concertData = [
     {
       id: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400',
+      imageUrl: 'https://s.isanook.com/jo/0/ud/495/2475717/729171.jpg?ip/resize/w728/q80/jpg',
       category: 'คอนเสิร์ต' as const,
       title: 'LE SSERAFIM - UNFORGIVEN',
       priceRange: 'ค. 31 ธ.ค. - 01 ม.ค.',
@@ -95,7 +95,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       id: 2,
-      imageUrl: 'https://images.unsplash.com/photo-1566331312619-5642b93028e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwcG9zdGVyJTIwZGFya3xlbnwxfHx8fDE3NjE5ODc5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: 'https://s.isanook.com/jo/0/ui/495/2475593/gal-2475593-20250716064744-edd32de.jpg',
       category: 'แฟนไซน์' as const,
       title: 'NCT DREAM Fansign',
       priceRange: 'ค. 15 ธ.ค.',
@@ -321,7 +321,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
 
           {/* News Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {filteredNews.map((news) => (
       <div key={news.id} onClick={() => onNavigate('news-detail', news.id)}>
         <NewsCard {...news} />
@@ -470,13 +470,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
        <section className="py-8 bg-white">
       <div className="container mx-auto px-4">
         <SectionHeader title="Topic X" icon={true} />
-        <div className="mt-4">
-          {/* ตัวอย่างการฝังโพสต์ X */}
-          {/* <XPostEmbed postUrl="https://x.com/example/status/1234567890" /> */}
-        </div>
+        
       </div>
          
     </section>
+
 
 
     </main>
